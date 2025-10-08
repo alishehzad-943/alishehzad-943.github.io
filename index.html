@@ -1,71 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ali Shehzad 943 - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
+    /* ===== GLOBAL ===== */
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9fdfc;
-      color: #333;
+      background: #f4f9ff;
+      color: #222;
       line-height: 1.6;
     }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0b1736;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 10px;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* ===== HEADER ===== */
     header {
       text-align: center;
-      padding: 60px 20px;
-      background: #1e2a38;
+      padding: 120px 20px 60px;
+      background: linear-gradient(120deg, #0b1736, #154281);
       color: white;
     }
     header h1 {
       font-size: 3em;
       margin-bottom: 10px;
+      letter-spacing: 1px;
     }
     header p {
-      font-size: 1.2em;
-      margin: 5px 0;
+      font-size: 1.3em;
+      opacity: 0.9;
     }
+
+    /* ===== SECTION ===== */
     section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 30px 20px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px 30px;
       background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
     }
-    h2 {
-      margin-bottom: 15px;
-      color: #1e2a38;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      background: #f4fdfc;
-      margin: 10px 0;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #e1f3f1;
-      transition: all 0.3s ease;
-    }
-    li:hover {
-      background: #e6faf8;
+    section:hover {
       transform: translateY(-3px);
     }
+
+    h2 {
+      color: #0b1736;
+      border-left: 6px solid #38bdf8;
+      padding-left: 12px;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: #f7fcff;
+      margin: 10px 0;
+      padding: 14px 16px;
+      border-left: 4px solid #38bdf8;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    li:hover {
+      background: #e9f6ff;
+      transform: translateX(5px);
+    }
+
     a {
       color: #007bff;
       text-decoration: none;
       font-weight: 500;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
+    /* ===== BUTTON ===== */
     .resume {
       text-align: center;
       margin: 30px 0;
@@ -77,13 +125,15 @@
       color: white;
       border-radius: 8px;
       font-size: 1.1em;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       transition: 0.3s;
     }
     .resume a:hover {
       background: #0056b3;
-      transform: scale(1.05);
+      transform: translateY(-3px);
     }
+
+    /* ===== CONTACT ===== */
     .contact {
       text-align: center;
       margin: 20px 0;
@@ -92,17 +142,47 @@
       margin: 8px 0;
       font-size: 1.05em;
     }
+
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
       padding: 15px;
-      background: #1e2a38;
-      margin-top: 40px;
+      background: #0b1736;
+      margin-top: 60px;
       color: white;
       font-size: 0.9em;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 12px;
+      }
+      header h1 {
+        font-size: 2.3em;
+      }
+      section {
+        margin: 40px 15px;
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#summary">Home</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <!-- HEADER -->
   <header>
@@ -111,7 +191,7 @@
   </header>
 
   <!-- SUMMARY -->
-  <section>
+  <section id="summary">
     <h2>Summary</h2>
     <p>
       DevOps Engineer with practical experience in automating CI/CD pipelines, managing
@@ -123,13 +203,13 @@
   </section>
 
   <!-- EDUCATION -->
-  <section>
+  <section id="education">
     <h2>Education</h2>
     <p><strong>BSc Automotive Engineering</strong> – University of Engineering and Technology (UET), Lahore</p>
   </section>
 
   <!-- EXPERIENCE -->
-  <section>
+  <section id="experience">
     <h2>Experience</h2>
     <p><strong>Ewarnet – DevOps Internship (Remote)</strong> (August 2024 – May 2025) | Islamabad, Pakistan</p>
     <ul>
@@ -141,7 +221,7 @@
   </section>
 
   <!-- TECHNICAL SKILLS -->
-  <section>
+  <section id="skills">
     <h2>Technical Skills</h2>
     <ul>
       <li><strong>Operating System:</strong> Linux</li>
@@ -158,31 +238,25 @@
   </section>
 
   <!-- PROJECTS -->
-  <section>
+  <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li>
-        <strong>Dockerized CI/CD Pipeline with Jenkins, GitHub, and Docker Hub</strong>  
+      <li><strong>Dockerized CI/CD Pipeline with Jenkins, GitHub, and Docker Hub</strong>  
         <a href="https://drive.google.com/file/d/10qyEIRJm95SSZmKlV-xqHwEppU50Zck4/view?usp=drivesdk" target="_blank">View PDF</a>
       </li>
-      <li>
-        <strong>End-to-End Deployment of a Node.js Application on AWS (ECR, ECS, Docker)</strong>  
+      <li><strong>End-to-End Deployment of a Node.js Application on AWS (ECR, ECS, Docker)</strong>  
         <a href="https://drive.google.com/file/d/1HLfqWedKvJ5jKx-f2XASbmbI3W69RtyS/view?usp=drivesdk" target="_blank">View PDF</a>
       </li>
-      <li>
-        <strong>Static Website Hosting on AWS (S3 & CloudFront)</strong>  
+      <li><strong>Static Website Hosting on AWS (S3 & CloudFront)</strong>  
         <a href="https://drive.google.com/file/d/19ul1drOTj1Pyqdyihp54POjI1uxmf9ZJ/view?usp=drivesdk" target="_blank">View PDF</a>
       </li>
-      <li>
-        <strong>Infrastructure Automation using Terraform (AWS)</strong>     
+      <li><strong>Infrastructure Automation using Terraform (AWS)</strong>     
         <a href="https://drive.google.com/file/d/1oW0mbJXk6JfrAWJJR9AOx82JzXtMOIVF/view?usp=drivesdk" target="_blank">View PDF</a>
       </li>
-      <li>
-        <strong>Portfolio Deployment through GitHub Pages and AWS (S3, IAM)</strong>  
+      <li><strong>Portfolio Deployment through GitHub Pages and AWS (S3, IAM)</strong>  
         <a href="https://drive.google.com/file/d/1pVy9MWgNsGbb3mzvHxvMLpfkHDukwWjy/view?usp=drivesdk" target="_blank">View PDF</a>
       </li>
-      <li>
-        <strong>EC2 Instance Monitoring using Prometheus & Grafana</strong>    
+      <li><strong>EC2 Instance Monitoring using Prometheus & Grafana</strong>    
         <a href="https://www.linkedin.com/posts/ali-shehzad-_i-am-happy-to-share-my-recent-project-where-activity-7375739291274141696-n4S5" target="_blank">View on LinkedIn</a>
       </li>
     </ul>
@@ -200,27 +274,22 @@
   </section>
 
   <!-- CERTIFICATIONS -->
-  <section>
+  <section id="certifications">
     <h2>Certifications</h2>
     <ul>
-      <li>
-        Getting Started DevOps on AWS From AWS  
+      <li>Getting Started DevOps on AWS From AWS  
         <a href="https://drive.google.com/file/d/1_5WupM5yjbezfqQw3GFmTaZyW3buycG3/view?usp=drivesdk" target="_blank">View Certificate</a>
       </li>
-      <li>
-        AWS Cloud Practitioner Essentials From AWS  
+      <li>AWS Cloud Practitioner Essentials From AWS  
         <a href="https://drive.google.com/file/d/1hb6932_mlqsy5ntpE55ziJsIDFcehyw2/view?usp=drivesdk" target="_blank">View Certificate</a>
       </li>
-      <li>
-        Basics Observability for Amazon EKS From AWS  
+      <li>Basics Observability for Amazon EKS From AWS  
         <a href="https://drive.google.com/file/d/1PcRO_mrZIlK6O33BHwmacIh5FVwQFyCu/view?usp=drivesdk" target="_blank">View Certificate</a>
       </li>
-      <li>
-        Linux: Introduction to Shell Scripting for DevOps From Coursera  
+      <li>Linux: Introduction to Shell Scripting for DevOps From Coursera  
         <a href="https://drive.google.com/file/d/1yi4YtJ0OqkI1859GtTKVxIL2X9akiozk/view?usp=drivesdk" target="_blank">View Certificate</a>
       </li>
-      <li>
-        Introduction to Git & GitHub From Coursera  
+      <li>Introduction to Git & GitHub From Coursera  
         <a href="https://drive.google.com/file/d/1srIlF4EEbt0xuG5SWHGgkXyKSi2s72uD/view?usp=drivesdk" target="_blank">View Certificate</a>
       </li>
     </ul>
@@ -235,7 +304,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section>
+  <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact">
       <p>Phone: <a href="tel:+923255723412">+(92) 325 5723412</a></p>
@@ -249,6 +318,5 @@
   <footer>
     <p>© 2025 Ali Shehzad 943 | Portfolio</p>
   </footer>
-
 </body>
 </html>
