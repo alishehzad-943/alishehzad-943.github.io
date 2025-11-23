@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8fafc;
+  color: #222;
+}
+
+header {
+  background: #0b1d39;
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+  display: block;
+}
+
+header.hidden {
+  display: none;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+nav {
+  background: #12294e;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+nav button:hover,
+nav button.active {
+  background: #1d3b70;
+}
+
+section {
+  display: none;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  animation: fade 0.6s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  color: #0b1d39;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+li {
+  margin: 10px 0;
+  padding: 12px;
+  background: #f4f8ff;
+  border-left: 4px solid #0b1d39;
+  border-radius: 6px;
+}
+
+a {
+  color: #0b5ed7;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.resume {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resume a {
+  background: #0b5ed7;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.resume a:hover {
+  background: #083a8a;
+}
+
+.contact p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+footer {
+  background: #0b1d39;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  display: block;
+}
+
+footer.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header h1 { font-size: 2.2rem; }
+  nav button { padding: 10px 15px; font-size: 0.9rem; }
+  section { margin: 20px 10px; padding: 25px; }
+}
