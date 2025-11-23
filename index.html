@@ -4,160 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ali Shehzad — DevOps Engineer</title>
+
+  <!-- External CSS File -->
+  <link rel="stylesheet" href="style.css" />
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f8fafc;
-      color: #222;
-    }
-
-    header {
-      background: #0b1d39;
-      color: white;
-      text-align: center;
-      padding: 70px 20px;
-      display: block;
-    }
-
-    header.hidden {
-      display: none;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.3rem;
-      opacity: 0.9;
-    }
-
-    nav {
-      background: #12294e;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav button {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 1rem;
-      padding: 15px 20px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    nav button:hover,
-    nav button.active {
-      background: #1d3b70;
-    }
-
-    section {
-      display: none;
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      animation: fade 0.6s ease;
-    }
-
-    @keyframes fade {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    section.active {
-      display: block;
-    }
-
-    h2 {
-      color: #0b1d39;
-      border-bottom: 2px solid #eee;
-      margin-bottom: 15px;
-      padding-bottom: 5px;
-    }
-
-    ul {
-      list-style: none;
-      margin-top: 10px;
-    }
-
-    li {
-      margin: 10px 0;
-      padding: 12px;
-      background: #f4f8ff;
-      border-left: 4px solid #0b1d39;
-      border-radius: 6px;
-    }
-
-    a {
-      color: #0b5ed7;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .resume {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .resume a {
-      background: #0b5ed7;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 8px;
-      display: inline-block;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .resume a:hover {
-      background: #083a8a;
-    }
-
-    .contact p {
-      margin: 8px 0;
-      font-size: 1rem;
-    }
-
-    footer {
-      background: #0b1d39;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      display: block;
-    }
-
-    footer.hidden {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      nav button { padding: 10px 15px; font-size: 0.9rem; }
-      section { margin: 20px 10px; padding: 25px; }
-    }
-  </style>
 </head>
 <body>
   <header id="header">
@@ -183,8 +34,7 @@
       DevOps Engineer with hands on experience in automating CI/CD pipelines, managing
       cloud setups on AWS, and using Docker for containers. Skilled in Git, Jenkins, Linux,
       Ansible, and Terraform. Passionate about learning new DevOps tools, improving
-      systems, and helping teams deliver reliable and fast software. Always eager to grow,
-      take on new challenges, and work on real-world projects.
+      systems, and helping teams deliver reliable and fast software.
     </p>
   </section>
 
@@ -221,6 +71,7 @@
   <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
+
     <h3>Technical Skills</h3>
     <ul>
       <li>Linux, Git, GitHub</li>
@@ -230,6 +81,7 @@
       <li>Cloud AWS</li>
       <li>Python, Bash scripting</li>
     </ul>
+
     <h3>Soft Skills</h3>
     <ul>
       <li>Problem-solving and troubleshooting</li>
@@ -244,17 +96,22 @@
     <h2>Projects</h2>
     <ul>
       <li><strong>Dockerized CI/CD Pipeline with Jenkins, GitHub, and Docker Hub</strong>  
-        <a href="https://drive.google.com/file/d/10qyEIRJm95SSZmKlV-xqHwEppU50Zck4/view?usp=drivesdk" target="_blank">View PDF</a></li>
+        <a href="https://drive.google.com/file/d/10qyEIRJm95SSZmKlV-xqHwEppU50Zck4/view">View PDF</a></li>
+
       <li><strong>End-to-End Deployment of a Node.js Application on AWS (ECR, ECS, Docker)</strong>  
-        <a href="https://drive.google.com/file/d/1HLfqWedKvJ5jKx-f2XASbmbI3W69RtyS/view?usp=drivesdk" target="_blank">View PDF</a></li>
+        <a href="https://drive.google.com/file/d/1HLfqWedKvJ5jKx-f2XASbmbI3W69RtyS/view">View PDF</a></li>
+
       <li><strong>Static Website Hosting on AWS (S3 & CloudFront)</strong>  
-        <a href="https://drive.google.com/file/d/19ul1drOTj1Pyqdyihp54POjI1uxmf9ZJ/view?usp=drivesdk" target="_blank">View PDF</a></li>
+        <a href="https://drive.google.com/file/d/19ul1drOTj1Pyqdyihp54POjI1uxmf9ZJ/view">View PDF</a></li>
+
       <li><strong>Infrastructure Automation using Terraform (AWS)</strong>  
-        <a href="https://drive.google.com/file/d/1oW0mbJXk6JfrAWJJR9AOx82JzXtMOIVF/view?usp=drivesdk" target="_blank">View PDF</a></li>
+        <a href="https://drive.google.com/file/d/1oW0mbJXk6JfrAWJJR9AOx82JzXtMOIVF/view">View PDF</a></li>
+
       <li><strong>Portfolio Deployment through GitHub Pages and AWS (S3, IAM)</strong>  
-        <a href="https://drive.google.com/file/d/1pVy9MWgNsGbb3mzvHxvMLpfkHDukwWjy/view?usp=drivesdk" target="_blank">View PDF</a></li>
+        <a href="https://drive.google.com/file/d/1pVy9MWgNsGbb3mzvHxvMLpfkHDukwWjy/view">View PDF</a></li>
+
       <li><strong>EC2 Instance Monitoring using Prometheus & Grafana</strong>  
-        <a href="https://www.linkedin.com/posts/ali-shehzad-_i-am-happy-to-share-my-recent-project-where-activity-7375739291274141696-n4S5" target="_blank">View on LinkedIn</a></li>
+        <a href="https://www.linkedin.com/posts/ali-shehzad-_i-am-happy-to-share-my-recent-project-where-activity-7375739291274141696-n4S5">View on LinkedIn</a></li>
     </ul>
   </section>
 
@@ -262,11 +119,11 @@
   <section id="certifications">
     <h2>Certifications</h2>
     <ul>
-      <li>Getting Started DevOps on AWS — <a href="https://drive.google.com/file/d/1_5WupM5yjbezfqQw3GFmTaZyW3buycG3/view?usp=drivesdk" target="_blank">View</a></li>
-      <li>AWS Cloud Practitioner Essentials — <a href="https://drive.google.com/file/d/1hb6932_mlqsy5ntpE55ziJsIDFcehyw2/view?usp=drivesdk" target="_blank">View</a></li>
-      <li>Basics Observability for Amazon EKS — <a href="https://drive.google.com/file/d/1PcRO_mrZIlK6O33BHwmacIh5FVwQFyCu/view?usp=drivesdk" target="_blank">View</a></li>
-      <li>Linux: Introduction to Shell Scripting for DevOps — <a href="https://drive.google.com/file/d/1yi4YtJ0OqkI1859GtTKVxIL2X9akiozk/view?usp=drivesdk" target="_blank">View</a></li>
-      <li>Introduction to Git & GitHub — <a href="https://drive.google.com/file/d/1srIlF4EEbt0xuG5SWHGgkXyKSi2s72uD/view?usp=drivesdk" target="_blank">View</a></li>
+      <li>Getting Started DevOps on AWS — <a href="https://drive.google.com/file/d/1_5WupM5yjbezfqQw3GFmTaZyW3buycG3/view">View</a></li>
+      <li>AWS Cloud Practitioner Essentials — <a href="https://drive.google.com/file/d/1hb6932_mlqsy5ntpE55ziJsIDFcehyw2/view">View</a></li>
+      <li>Basics Observability for Amazon EKS — <a href="https://drive.google.com/file/d/1PcRO_mrZIlK6O33BHwmacIh5FVwQFyCu/view">View</a></li>
+      <li>Linux: Introduction to Shell Scripting for DevOps — <a href="https://drive.google.com/file/d/1yi4YtJ0OqkI1859GtTKVxIL2X9akiozk/view">View</a></li>
+      <li>Introduction to Git & GitHub — <a href="https://drive.google.com/file/d/1srIlF4EEbt0xuG5SWHGgkXyKSi2s72uD/view">View</a></li>
     </ul>
   </section>
 
@@ -274,7 +131,7 @@
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume">
-      <a href="https://drive.google.com/file/d/1vR_SPGeqMfHynKp1o_pDFuJFBAk26jnn/view?usp=drivesdk" target="_blank">View My Resume</a>
+      <a href="https://drive.google.com/file/d/1vR_SPGeqMfHynKp1o_pDFuJFBAk26jnn/view" target="_blank">View My Resume</a>
     </div>
   </section>
 
@@ -313,5 +170,6 @@
       }
     }
   </script>
+
 </body>
 </html>
