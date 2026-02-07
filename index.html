@@ -106,7 +106,6 @@
       text-decoration: underline;
     }
 
-    /* ---------- CARD DESIGN ---------- */
     .card {
       background: #f4f8ff;
       border-left: 5px solid #0b1d39;
@@ -127,7 +126,6 @@
       to { opacity: 1; transform: translateX(0); }
     }
 
-    /* ---------- EXPERIENCE / EDUCATION HEADER ---------- */
     .row-header {
       display: flex;
       justify-content: space-between;
@@ -165,7 +163,6 @@
       list-style: disc;
     }
 
-    /* ---------- PROJECTS ---------- */
     .project-row {
       display: flex;
       justify-content: space-between;
@@ -184,7 +181,6 @@
       white-space: nowrap;
     }
 
-    /* ---------- CERTIFICATIONS ---------- */
     .cert-row {
       display: flex;
       justify-content: space-between;
@@ -198,7 +194,6 @@
       flex: 1;
     }
 
-    /* ---------- SKILLS ---------- */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -226,7 +221,6 @@
       margin: 6px 0;
     }
 
-    /* ---------- RESUME ---------- */
     .resume {
       text-align: center;
       margin-top: 20px;
@@ -245,7 +239,6 @@
       background: #083a8a;
     }
 
-    /* ---------- CONTACT ---------- */
     .contact-list {
       display: flex;
       flex-direction: column;
@@ -265,7 +258,6 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
     }
 
-    /* ---------- FOOTER ---------- */
     footer {
       background: #0b1d39;
       color: white;
@@ -279,7 +271,6 @@
       display: none;
     }
 
-    /* ---------- MOBILE ---------- */
     @media (max-width: 768px) {
       header h1 { font-size: 2.2rem; }
       nav button { padding: 10px 14px; font-size: 0.9rem; }
@@ -315,7 +306,6 @@
     <button onclick="showSection('contact', event)">Contact</button>
   </nav>
 
-  <!-- HOME -->
   <section id="home" class="active">
     <h2>About Me</h2>
     <p>
@@ -327,7 +317,6 @@
     </p>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
     <h2>Experience</h2>
 
@@ -371,7 +360,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
 
@@ -446,7 +434,6 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
 
@@ -479,7 +466,6 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
   <section id="education">
     <h2>Education</h2>
 
@@ -495,7 +481,6 @@
     </div>
   </section>
 
-  <!-- CERTIFICATIONS -->
   <section id="certifications">
     <h2>Certifications</h2>
 
@@ -516,7 +501,7 @@
     <div class="card">
       <div class="cert-row">
         <div class="cert-title">Basics Observability for Amazon EKS</div>
-        <a href="https://drive.google.com/file/d/1PcRO_mrZIlK6O33BHwmacIh5FVwQFyCu/view" target="_blank">View</a>
+        <a href="https://drive.google.com/file/d/1PcRO_mZIlK6O33BHwmacIh5FVwQFyCu/view" target="_blank">View</a>
       </div>
     </div>
 
@@ -535,7 +520,6 @@
     </div>
   </section>
 
-  <!-- RESUME -->
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume">
@@ -543,21 +527,33 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <h2>Contact Me</h2>
 
     <div class="contact-list">
-      <div class="contact-box">Phone: <a href="tel:+923255723412">+(92) 325 5723412</a></div>
-      <div class="contact-box">Email: <a href="mailto:engralishehzad503@gmail.com">engralishehzad503@gmail.com</a></div>
-      <div class="contact-box">LinkedIn: <a href="https://www.linkedin.com/in/ali-shehzad-" target="_blank">linkedin.com/in/ali-shehzad-</a></div>
-      <div class="contact-box">GitHub: <a href="https://github.com/alishehzad-943" target="_blank">github.com/alishehzad-943</a></div>
+      <div class="contact-box">
+        WhatsApp:
+        <a href="https://wa.me/923255723412" target="_blank">+(92) 325 5723412</a>
+      </div>
+
+      <div class="contact-box">
+        Email:
+        <a href="mailto:engralishehzad503@gmail.com">engralishehzad503@gmail.com</a>
+      </div>
+
+      <div class="contact-box">
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/ali-shehzad-" target="_blank">linkedin.com/in/ali-shehzad-</a>
+      </div>
+
+      <div class="contact-box">
+        GitHub:
+        <a href="https://github.com/alishehzad-943" target="_blank">github.com/alishehzad-943</a>
+      </div>
     </div>
   </section>
 
-  <footer id="footer">
-    © 2025 Ali Shehzad | Portfolio
-  </footer>
+  <footer id="footer"></footer>
 
   <script>
     function showSection(id, event) {
