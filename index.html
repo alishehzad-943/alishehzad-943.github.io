@@ -4,192 +4,448 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ali Shehzad — DevOps Engineer</title>
-
-  <!-- External CSS File -->
-  <link rel="stylesheet" href="style.css" />
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8fafc;
+      color: #222;
+    }
+
+    header {
+      background: #0b1d39;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    header.hidden {
+      display: none;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: #12294e;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav button {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      padding: 15px 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    nav button:hover,
+    nav button.active {
+      background: #1d3b70;
+    }
+
+    section {
+      display: none;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      animation: fade 0.6s ease;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #0b1d39;
+      border-bottom: 2px solid #eee;
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    a {
+      color: #0b5ed7;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- CARD DESIGN (Experience + Projects) ---------- */
+    .card {
+      background: #f4f8ff;
+      border-left: 5px solid #0b1d39;
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      animation: slideIn 0.7s ease both;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-12px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ---------- EXPERIENCE HEADER LAYOUT ---------- */
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .exp-left {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #0b1d39;
+    }
+
+    .exp-right {
+      font-size: 0.9rem;
+      color: #555;
+      white-space: nowrap;
+    }
+
+    .company {
+      font-weight: 500;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .card ul {
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+
+    .card li {
+      margin: 6px 0;
+      list-style: disc;
+    }
+
+    /* ---------- PROJECT CARD ---------- */
+    .project-title {
+      font-weight: 600;
+      color: #0b1d39;
+      margin-bottom: 6px;
+    }
+
+    .project-link {
+      margin-top: 6px;
+      display: inline-block;
+    }
+
+    /* ---------- SKILLS ---------- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skills-box {
+      background: #f4f8ff;
+      border-left: 4px solid #0b1d39;
+      border-radius: 8px;
+      padding: 15px 18px;
+    }
+
+    .skills-box h3 {
+      margin-bottom: 10px;
+      color: #0b1d39;
+    }
+
+    .skills-box ul {
+      padding-left: 18px;
+    }
+
+    .skills-box li {
+      list-style: disc;
+      margin: 6px 0;
+    }
+
+    /* ---------- RESUME BUTTON ---------- */
+    .resume {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .resume a {
+      background: #0b5ed7;
+      color: white;
+      padding: 12px 26px;
+      border-radius: 10px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .resume a:hover {
+      background: #083a8a;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact p {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #0b1d39;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    footer.hidden {
+      display: none;
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      nav button { padding: 10px 14px; font-size: 0.9rem; }
+      section { margin: 20px 10px; padding: 25px; }
+
+      .exp-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .exp-right {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header id="header">
     <h1>Ali Shehzad</h1>
     <p>DevOps Engineer</p>
   </header>
 
   <nav>
-  <button class="active" onclick="showSection('home', event)">Home</button>
-  <button onclick="showSection('experience', event)">Experience</button>
-  <button onclick="showSection('projects', event)">Projects</button>
-  <button onclick="showSection('skills', event)">Skills</button>
-  <button onclick="showSection('education', event)">Education</button>
-  <button onclick="showSection('certifications', event)">Certifications</button>
-  <button onclick="showSection('resume', event)">Resume</button>
-  <button onclick="showSection('contact', event)">Contact</button>
-</nav>
-
+    <button class="active" onclick="showSection('home', event)">Home</button>
+    <button onclick="showSection('experience', event)">Experience</button>
+    <button onclick="showSection('projects', event)">Projects</button>
+    <button onclick="showSection('skills', event)">Skills</button>
+    <button onclick="showSection('education', event)">Education</button>
+    <button onclick="showSection('certifications', event)">Certifications</button>
+    <button onclick="showSection('resume', event)">Resume</button>
+    <button onclick="showSection('contact', event)">Contact</button>
+  </nav>
 
   <!-- HOME -->
   <section id="home" class="active">
     <h2>About Me</h2>
     <p>
-     I am a DevOps Engineer with hands-on experience in setting up and automating CI/CD pipelines to help teams 
-      deliver software faster and more reliably. I have worked with AWS to manage cloud infrastructure and used Docker 
-      to containerize applications.I am skilled in Git, Jenkins, Kubernetes, Linux, Ansible, and Terraform, and I use these 
-      tools to automate tasks,  improve workflows, and increase system efficiency.I have completed internships and freelance 
-      projects where I applied my skills to real-world problems, built cloud-based solutions, and improved deployment processes. 
-      
-      I enjoy learning new DevOps tools, working on challenging projects, and collaborating with teams to deliver high-quality software.
-      My goal is to continue growing as a DevOps professional and contribute to projects that create real impact.
+      I am a DevOps Engineer with hands-on experience in building and automating CI/CD pipelines to help teams deliver software faster and more reliably.
+      I work with AWS, Docker, Kubernetes, Jenkins, GitHub Actions, Terraform, and Ansible to automate infrastructure and deployment workflows.
+      I have completed internships and freelance-style projects where I applied my skills to real-world problems, built cloud-based solutions,
+      and improved deployment processes. I enjoy learning new tools, working on challenging projects, and collaborating with teams to deliver
+      high-quality software. My goal is to continue growing as a DevOps professional and contribute to impactful engineering teams.
     </p>
   </section>
 
-  <!-- EDUCATION -->
-<section id="education">
-  <h2>Education</h2>
-  <p>
-    <strong>BSc Automotive Engineering</strong><br>
-    University of Engineering and Technology (UET), Lahore, Pakistan<br>
-    <em>2022 – 2026 (Final Semester)</em>
-  </p>
-</section>
-
-
   <!-- EXPERIENCE -->
-<section id="experience">
-  <h2>Experience</h2>
+  <section id="experience">
+    <h2>Experience</h2>
 
-  <p><strong>DevOps Intern – TechnoHacks Solutions Pvt. Ltd (Remote)</strong><br>
-     <em>Dec 2025 – Jan 2026</em>
-  </p>
-  <ul>
-    <li>Learning DevOps freelancing practices, including client communication, task planning, and delivery timelines.</li>
-    <li>Working on automation-driven deployments to improve release speed and reduce manual effort.</li>
-    <li>Using AWS and modern DevOps tools to build solutions focused on fast and reliable application delivery.</li>
-  </ul>
+    <!-- TechnoHacks -->
+    <div class="card">
+      <div class="exp-header">
+        <div class="exp-left">DevOps Intern</div>
+        <div class="exp-right">Nashik, India (Remote) | Dec 2025 – Jan 2026</div>
+      </div>
+      <div class="company">TechnoHacks Solutions Pvt. Ltd</div>
+      <ul>
+        <li>Learned DevOps freelancing workflows including client communication, task planning, and delivery timelines.</li>
+        <li>Worked on automation-driven deployments to improve release speed and reduce manual effort.</li>
+        <li>Used AWS and modern DevOps tools to build reliable application delivery pipelines.</li>
+      </ul>
+    </div>
 
-  <br>
+    <!-- Rhombix -->
+    <div class="card">
+      <div class="exp-header">
+        <div class="exp-left">DevOps Intern</div>
+        <div class="exp-right">Lahore, Pakistan (Remote) | Oct 2025 – Dec 2025</div>
+      </div>
+      <div class="company">Rhombix Technology</div>
+      <ul>
+        <li>Worked on real-world DevOps projects with weekly tasks and mentor-led guidance.</li>
+        <li>Used Git, GitHub, Docker, Kubernetes, Jenkins, Terraform, and Ansible in multiple projects.</li>
+        <li>Built and deployed applications using automated CI/CD pipelines.</li>
+      </ul>
+    </div>
 
-  <p><strong>DevOps Intern – Rhombix Technology (Remote)</strong><br>
-     <em>October 2025 – Dec 2025</em>
-  </p>
-  <ul>
-    <li>Worked on real-world DevOps projects with weekly tasks and daily learning from mentors.</li>
-    <li>Used Git, GitHub, Docker, Kubernetes, Jenkins, Terraform, and Ansible in multiple projects.</li>
-    <li>Built and deployed applications using automated CI/CD pipelines.</li>
-  </ul>
+    <!-- Ewarnet -->
+    <div class="card">
+      <div class="exp-header">
+        <div class="exp-left">DevOps Intern</div>
+        <div class="exp-right">Islamabad, Pakistan (Remote) | Aug 2024 – Jul 2025</div>
+      </div>
+      <div class="company">Ewarnet</div>
+      <ul>
+        <li>Learned DevOps fundamentals using Linux, Git, and GitHub with a focus on version control workflows.</li>
+        <li>Worked on CI/CD tasks using Jenkins for build and deployment automation.</li>
+        <li>Gained hands-on experience with AWS, Docker, Terraform, Ansible, and Kubernetes.</li>
+      </ul>
+    </div>
 
-  <br>
+  </section>
 
-  <p><strong>DevOps Intern – Ewarnet (Remote)</strong><br>
-     <em>Aug 2024 – Jul 2025</em>
-  </p>
-  <ul>
-    <li>Learned DevOps fundamentals using Linux, Git, and GitHub with a focus on version control and workflows.</li>
-    <li>Worked on basic CI/CD tasks using Jenkins for build and deployment automation.</li>
-    <li>Gained foundational hands-on experience with AWS, Docker, Terraform, Ansible, and Kubernetes.</li>
-  </ul>
-</section>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
 
+    <div class="card">
+      <div class="project-title">Dockerised Multi-Container Round Robin System Using Linux, Docker & Shell Scripting</div>
+      <a class="project-link" href="https://drive.google.com/file/d/1viz370aT05exlc70MpZ16Ntt4bJoqd28/view?usp=drive_link" target="_blank">View PDF</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Botnet Analysis with Intrusion Detection (Snort) on AWS EC2 using Wireshark</div>
+      <a class="project-link" href="https://drive.google.com/file/d/1M92m2kiCWBcYvkf7ddVfvBpkKJ5ShcxY/view?usp=drive_link" target="_blank">View PDF</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Dockerized CI/CD Pipeline with Jenkins, GitHub, and Docker Hub</div>
+      <a class="project-link" href="https://drive.google.com/file/d/10qyEIRJm95SSZmKlV-xqHwEppU50Zck4/view?usp=drivesdk" target="_blank">View PDF</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Infrastructure Automation using Terraform (AWS)</div>
+      <a class="project-link" href="https://drive.google.com/file/d/1oW0mbJXk6JfrAWJJR9AOx82JzXtMOIVF/view?usp=drivesdk" target="_blank">View PDF</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Deployment of a Node.js Application on AWS Using ECR, ECS and Docker</div>
+      <a class="project-link" href="https://drive.google.com/file/d/1HLfqWedKvJ5jKx-f2XASbmbI3W69RtyS/view?usp=drivesdk" target="_blank">View PDF</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Secure Web Application Deployment on AWS EC2 with Nginx, Domain & SSL</div>
+      <a class="project-link" href="https://drive.google.com/file/d/19vRFWYHalf9Cdm_eRNRl-Votob9YiP3e/view?usp=drive_link" target="_blank">View PDF</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Deploying a Flask Application on Kubernetes Using KIND in AWS EC2</div>
+      <a class="project-link" href="https://drive.google.com/file/d/1wYneEbAh2WLzMZb6SzW_zJFEu2B1lNA2/view?usp=drive_link" target="_blank">View PDF</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Portfolio Deployment through GitHub Pages and AWS (S3, IAM)</div>
+      <a class="project-link" href="https://drive.google.com/file/d/1pVy9MWgNsGbb3mzvHxvMLpfkHDukwWjy/view?usp=drivesdk" target="_blank">View PDF</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Static Website Hosting on AWS (S3 & CloudFront)</div>
+      <a class="project-link" href="https://drive.google.com/file/d/19ul1drOTj1Pyqdyihp54POjI1uxmf9ZJ/view?usp=drivesdk" target="_blank">View PDF</a>
+    </div>
+
+    <div class="card">
+      <div class="project-title">Jenkins CI/CD Pipeline & Docker Containerization</div>
+      <a class="project-link" href="https://drive.google.com/file/d/1aovmZ759r8omTGePKvHhPapEep5K3u1M/view?usp=drive_link" target="_blank">View PDF</a>
+    </div>
+
+  </section>
 
   <!-- SKILLS -->
   <section id="skills">
     <h2>Skills</h2>
 
-   <h3>Technical Skills</h3>
-<ul>
-  <li><strong>Operating System:</strong> Linux</li>
-  <li><strong>CI/CD Pipelines:</strong> Jenkins, GitHub Actions</li>
-  <li><strong>Version Control:</strong> Git, GitHub</li>
-  <li><strong>Containerization:</strong> Docker</li>
-  <li><strong>Container Orchestration:</strong> Kubernetes</li>
-  <li><strong>Infrastructure as Code (IaC):</strong> Terraform</li>
-  <li><strong>Configuration Management:</strong> Ansible</li>
-  <li><strong>Cloud & Infrastructure:</strong> AWS</li>
-  <li><strong>Scripting:</strong> Python, Bash</li>
-  <li><strong>Monitoring & Observability:</strong> Prometheus, Grafana</li>
-</ul>
+    <div class="skills-grid">
+      <div class="skills-box">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li>Linux</li>
+          <li>Git, GitHub</li>
+          <li>Jenkins, GitHub Actions</li>
+          <li>Docker</li>
+          <li>Kubernetes</li>
+          <li>Terraform</li>
+          <li>Ansible</li>
+          <li>AWS</li>
+          <li>Python, Bash</li>
+          <li>Prometheus, Grafana</li>
+        </ul>
+      </div>
 
+      <div class="skills-box">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Quick learner with strong DevOps interest</li>
+          <li>Problem-solving mindset</li>
+          <li>Team collaboration and communication</li>
+          <li>Highly motivated to grow in cloud and automation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <h3>Soft Skills</h3>
-<ul>
-  <li>Quick learner with a strong interest in DevOps tools and processes</li>
-  <li>Ability to identify and resolve basic DevOps and deployment-related issues</li>
-  <li>Works well in a team environment and follows instructions effectively</li>
-  <li>Highly motivated to learn cloud platforms and automation technologies</li>
-</ul>
-</section>
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+    <p>
+      <strong>BSc Automotive Engineering</strong><br>
+      University of Engineering and Technology (UET), Lahore, Pakistan<br>
+      <em>2022 – 2026 (Final Semester)</em>
+    </p>
+  </section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2>
-  <ul>
-
-    <li>
-      <strong>Dockerised Multi-Container Round Robin System Using Linux, Docker & Shell Scripting</strong>  
-      <a href="https://drive.google.com/file/d/1viz370aT05exlc70MpZ16Ntt4bJoqd28/view?usp=drive_link" target="_blank">View PDF</a>
-    </li>
-
-    <li>
-      <strong>Botnet Analysis with Intrusion Detection (Snort) on AWS EC2 using Wireshark</strong>  
-      <a href="https://drive.google.com/file/d/1M92m2kiCWBcYvkf7ddVfvBpkKJ5ShcxY/view?usp=drive_link" target="_blank">View PDF</a>
-    </li>
-
-    <li>
-      <strong>Dockerized CI/CD Pipeline with Jenkins, GitHub, and Docker Hub</strong>  
-      <a href="https://drive.google.com/file/d/10qyEIRJm95SSZmKlV-xqHwEppU50Zck4/view?usp=drivesdk" target="_blank">View PDF</a>
-    </li>
-
-    <li>
-      <strong>Infrastructure Automation using Terraform (AWS)</strong>  
-      <a href="https://drive.google.com/file/d/1oW0mbJXk6JfrAWJJR9AOx82JzXtMOIVF/view?usp=drivesdk" target="_blank">View PDF</a>
-    </li>
-
-    <li>
-      <strong>Deployment of a Node.js Application on AWS Using ECR, ECS and Docker</strong>  
-      <a href="https://drive.google.com/file/d/1HLfqWedKvJ5jKx-f2XASbmbI3W69RtyS/view?usp=drivesdk" target="_blank">View PDF</a>
-    </li>
-
-    <!-- ✅ New project added (4th from last) -->
-    <li>
-      <strong>Secure Web Application Deployment on AWS EC2 with Nginx, Domain & SSL</strong>  
-      <a href="https://drive.google.com/file/d/19vRFWYHalf9Cdm_eRNRl-Votob9YiP3e/view?usp=drive_link" target="_blank">View PDF</a>
-    </li>
-
-    <li>
-      <strong>Deploying a Flask Application on Kubernetes Using KIND in AWS EC2</strong>  
-      <a href="https://drive.google.com/file/d/1wYneEbAh2WLzMZb6SzW_zJFEu2B1lNA2/view?usp=drive_link" target="_blank">View PDF</a>
-    </li>
-
-    <li>
-      <strong>Portfolio Deployment through GitHub Pages and AWS (S3, IAM)</strong>  
-      <a href="https://drive.google.com/file/d/1pVy9MWgNsGbb3mzvHxvMLpfkHDukwWjy/view?usp=drivesdk" target="_blank">View PDF</a>
-    </li>
-
-    <li>
-      <strong>Static Website Hosting on AWS (S3 & CloudFront)</strong>  
-      <a href="https://drive.google.com/file/d/19ul1drOTj1Pyqdyihp54POjI1uxmf9ZJ/view?usp=drivesdk" target="_blank">View PDF</a>
-    </li>
-
-    <!-- ✅ Last project added -->
-    <li>
-      <strong>Jenkins CI/CD Pipeline & Docker Containerization</strong>  
-      <a href="https://drive.google.com/file/d/1aovmZ759r8omTGePKvHhPapEep5K3u1M/view?usp=drive_link" target="_blank">View PDF</a>
-    </li>
-
-  </ul>
-</section>
-
-
-
- <!-- CERTIFICATIONS -->
+  <!-- CERTIFICATIONS -->
   <section id="certifications">
     <h2>Certifications</h2>
     <ul>
-      <li>Getting Started DevOps on AWS — <a href="https://drive.google.com/file/d/1_5WupM5yjbezfqQw3GFmTaZyW3buycG3/view">View</a></li>
-      <li>AWS Cloud Practitioner Essentials — <a href="https://drive.google.com/file/d/1hb6932_mlqsy5ntpE55ziJsIDFcehyw2/view">View</a></li>
-      <li>Basics Observability for Amazon EKS — <a href="https://drive.google.com/file/d/1PcRO_mrZIlK6O33BHwmacIh5FVwQFyCu/view">View</a></li>
-      <li>Linux: Introduction to Shell Scripting for DevOps — <a href="https://drive.google.com/file/d/1yi4YtJ0OqkI1859GtTKVxIL2X9akiozk/view">View</a></li>
-      <li>Introduction to Git & GitHub — <a href="https://drive.google.com/file/d/1srIlF4EEbt0xuG5SWHGgkXyKSi2s72uD/view">View</a></li>
+      <li>Getting Started DevOps on AWS — <a href="https://drive.google.com/file/d/1_5WupM5yjbezfqQw3GFmTaZyW3buycG3/view" target="_blank">View</a></li>
+      <li>AWS Cloud Practitioner Essentials — <a href="https://drive.google.com/file/d/1hb6932_mlqsy5ntpE55ziJsIDFcehyw2/view" target="_blank">View</a></li>
+      <li>Basics Observability for Amazon EKS — <a href="https://drive.google.com/file/d/1PcRO_mrZIlK6O33BHwmacIh5FVwQFyCu/view" target="_blank">View</a></li>
+      <li>Linux: Introduction to Shell Scripting for DevOps — <a href="https://drive.google.com/file/d/1yi4YtJ0OqkI1859GtTKVxIL2X9akiozk/view" target="_blank">View</a></li>
+      <li>Introduction to Git & GitHub — <a href="https://drive.google.com/file/d/1srIlF4EEbt0xuG5SWHGgkXyKSi2s72uD/view" target="_blank">View</a></li>
     </ul>
   </section>
 
@@ -197,7 +453,7 @@
   <section id="resume">
     <h2>Resume</h2>
     <div class="resume">
-      <a href="https://drive.google.com/file/d/1Chc-Kq9HTnqu_hA-ExJCq7_5WnATFd5q/view?usp=drive_link/view" target="_blank">View My Resume</a>
+      <a href="https://drive.google.com/file/d/1Chc-Kq9HTnqu_hA-ExJCq7_5WnATFd5q/view?usp=drive_link" target="_blank">View My Resume</a>
     </div>
   </section>
 
@@ -205,10 +461,10 @@
   <section id="contact">
     <h2>Contact Me</h2>
     <div class="contact">
-      <p>Phone: <a href="tel:+923255723412">+(92) 325 5723412</a></p>
-      <p>Email: <a href="mailto:engralishehzad503@gmail.com">engralishehzad503@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/ali-shehzad-" target="_blank">linkedin.com/in/ali-shehzad-</a></p>
-      <p>GitHub: <a href="https://github.com/alishehzad-943" target="_blank">github.com/alishehzad-943</a></p>
+      <p>📞 Phone: <a href="tel:+923255723412">+(92) 325 5723412</a></p>
+      <p>📧 Email: <a href="mailto:engralishehzad503@gmail.com">engralishehzad503@gmail.com</a></p>
+      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/ali-shehzad-" target="_blank">linkedin.com/in/ali-shehzad-</a></p>
+      <p>💻 GitHub: <a href="https://github.com/alishehzad-943" target="_blank">github.com/alishehzad-943</a></p>
     </div>
   </section>
 
