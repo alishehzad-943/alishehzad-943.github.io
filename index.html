@@ -127,8 +127,8 @@
       to { opacity: 1; transform: translateX(0); }
     }
 
-    /* ---------- EXPERIENCE HEADER ---------- */
-    .exp-header {
+    /* ---------- EXPERIENCE / EDUCATION HEADER ---------- */
+    .row-header {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -136,21 +136,21 @@
       margin-bottom: 6px;
     }
 
-    .exp-left {
-      font-weight: 600;
+    .row-left {
+      font-weight: 500;
       font-size: 1.05rem;
       color: #0b1d39;
     }
 
-    .exp-right {
+    .row-right {
       font-size: 0.9rem;
       color: #555;
-      max-width: 55%;
+      max-width: 60%;
       text-align: right;
     }
 
     .company {
-      font-weight: 500;
+      font-weight: 400;
       color: #333;
       margin-bottom: 6px;
     }
@@ -175,7 +175,7 @@
     }
 
     .project-title {
-      font-weight: 600;
+      font-weight: 400;
       color: #0b1d39;
       flex: 1;
     }
@@ -194,7 +194,7 @@
     }
 
     .cert-title {
-      font-weight: 500;
+      font-weight: 400;
       flex: 1;
     }
 
@@ -246,10 +246,10 @@
     }
 
     /* ---------- CONTACT ---------- */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .contact-box {
@@ -285,12 +285,12 @@
       nav button { padding: 10px 14px; font-size: 0.9rem; }
       section { margin: 20px 10px; padding: 25px; }
 
-      .exp-header {
+      .row-header {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .exp-right {
+      .row-right {
         text-align: left;
         max-width: 100%;
       }
@@ -332,9 +332,9 @@
     <h2>Experience</h2>
 
     <div class="card">
-      <div class="exp-header">
-        <div class="exp-left">DevOps Intern</div>
-        <div class="exp-right">Nashik, India (Remote) | Dec 2025 – Jan 2026</div>
+      <div class="row-header">
+        <div class="row-left">DevOps Intern</div>
+        <div class="row-right">Nashik, India (Remote) | Dec 2025 – Jan 2026</div>
       </div>
       <div class="company">TechnoHacks Solutions Pvt. Ltd</div>
       <ul>
@@ -345,9 +345,9 @@
     </div>
 
     <div class="card">
-      <div class="exp-header">
-        <div class="exp-left">DevOps Intern</div>
-        <div class="exp-right">Lahore, Pakistan (Remote) | Oct 2025 – Dec 2025</div>
+      <div class="row-header">
+        <div class="row-left">DevOps Intern</div>
+        <div class="row-right">Lahore, Pakistan (Remote) | Oct 2025 – Dec 2025</div>
       </div>
       <div class="company">Rhombix Technology</div>
       <ul>
@@ -358,9 +358,9 @@
     </div>
 
     <div class="card">
-      <div class="exp-header">
-        <div class="exp-left">DevOps Intern</div>
-        <div class="exp-right">Islamabad, Pakistan (Remote) | Aug 2024 – Jul 2025</div>
+      <div class="row-header">
+        <div class="row-left">DevOps Intern</div>
+        <div class="row-right">Islamabad, Pakistan (Remote) | Aug 2024 – Jul 2025</div>
       </div>
       <div class="company">Ewarnet</div>
       <ul>
@@ -482,11 +482,17 @@
   <!-- EDUCATION -->
   <section id="education">
     <h2>Education</h2>
-    <p>
-      <strong>BSc Automotive Engineering</strong><br>
-      University of Engineering and Technology (UET), Lahore, Pakistan<br>
-      <em>2022 – 2026 (Final Semester)</em>
-    </p>
+
+    <div class="card">
+      <div class="row-header">
+        <div class="row-left">University of Engineering and Technology (UET), Lahore</div>
+        <div class="row-right">Lahore, Pakistan</div>
+      </div>
+      <div class="row-header">
+        <div class="row-left">BSc Automotive Engineering</div>
+        <div class="row-right">2022 – 2026 (Final Semester)</div>
+      </div>
+    </div>
   </section>
 
   <!-- CERTIFICATIONS -->
@@ -541,7 +547,7 @@
   <section id="contact">
     <h2>Contact Me</h2>
 
-    <div class="contact-grid">
+    <div class="contact-list">
       <div class="contact-box">Phone: <a href="tel:+923255723412">+(92) 325 5723412</a></div>
       <div class="contact-box">Email: <a href="mailto:engralishehzad503@gmail.com">engralishehzad503@gmail.com</a></div>
       <div class="contact-box">LinkedIn: <a href="https://www.linkedin.com/in/ali-shehzad-" target="_blank">linkedin.com/in/ali-shehzad-</a></div>
