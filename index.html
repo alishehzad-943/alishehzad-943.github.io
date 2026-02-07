@@ -106,7 +106,7 @@
       text-decoration: underline;
     }
 
-    /* ---------- CARD DESIGN (Experience + Projects) ---------- */
+    /* ---------- CARD DESIGN ---------- */
     .card {
       background: #f4f8ff;
       border-left: 5px solid #0b1d39;
@@ -127,13 +127,13 @@
       to { opacity: 1; transform: translateX(0); }
     }
 
-    /* ---------- EXPERIENCE HEADER LAYOUT ---------- */
+    /* ---------- EXPERIENCE HEADER ---------- */
     .exp-header {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 8px;
+      gap: 6px;
+      margin-bottom: 6px;
     }
 
     .exp-left {
@@ -145,7 +145,8 @@
     .exp-right {
       font-size: 0.9rem;
       color: #555;
-      white-space: nowrap;
+      max-width: 55%;
+      text-align: right;
     }
 
     .company {
@@ -164,16 +165,37 @@
       list-style: disc;
     }
 
-    /* ---------- PROJECT CARD ---------- */
+    /* ---------- PROJECTS ---------- */
+    .project-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
     .project-title {
       font-weight: 600;
       color: #0b1d39;
-      margin-bottom: 6px;
+      flex: 1;
     }
 
     .project-link {
-      margin-top: 6px;
-      display: inline-block;
+      white-space: nowrap;
+    }
+
+    /* ---------- CERTIFICATIONS ---------- */
+    .cert-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .cert-title {
+      font-weight: 500;
+      flex: 1;
     }
 
     /* ---------- SKILLS ---------- */
@@ -204,7 +226,7 @@
       margin: 6px 0;
     }
 
-    /* ---------- RESUME BUTTON ---------- */
+    /* ---------- RESUME ---------- */
     .resume {
       text-align: center;
       margin-top: 20px;
@@ -224,9 +246,23 @@
     }
 
     /* ---------- CONTACT ---------- */
-    .contact p {
-      margin: 10px 0;
-      font-size: 1rem;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .contact-box {
+      background: #f4f8ff;
+      border-left: 4px solid #0b1d39;
+      border-radius: 8px;
+      padding: 14px 16px;
+      transition: 0.3s;
+    }
+
+    .contact-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
     }
 
     /* ---------- FOOTER ---------- */
@@ -255,7 +291,8 @@
       }
 
       .exp-right {
-        font-size: 0.85rem;
+        text-align: left;
+        max-width: 100%;
       }
     }
   </style>
@@ -294,7 +331,6 @@
   <section id="experience">
     <h2>Experience</h2>
 
-    <!-- TechnoHacks -->
     <div class="card">
       <div class="exp-header">
         <div class="exp-left">DevOps Intern</div>
@@ -308,7 +344,6 @@
       </ul>
     </div>
 
-    <!-- Rhombix -->
     <div class="card">
       <div class="exp-header">
         <div class="exp-left">DevOps Intern</div>
@@ -322,7 +357,6 @@
       </ul>
     </div>
 
-    <!-- Ewarnet -->
     <div class="card">
       <div class="exp-header">
         <div class="exp-left">DevOps Intern</div>
@@ -335,7 +369,6 @@
         <li>Gained hands-on experience with AWS, Docker, Terraform, Ansible, and Kubernetes.</li>
       </ul>
     </div>
-
   </section>
 
   <!-- PROJECTS -->
@@ -343,55 +376,74 @@
     <h2>Projects</h2>
 
     <div class="card">
-      <div class="project-title">Dockerised Multi-Container Round Robin System Using Linux, Docker & Shell Scripting</div>
-      <a class="project-link" href="https://drive.google.com/file/d/1viz370aT05exlc70MpZ16Ntt4bJoqd28/view?usp=drive_link" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Dockerised Multi-Container Round Robin System Using Linux, Docker & Shell Scripting</div>
+        <a class="project-link" href="https://drive.google.com/file/d/1viz370aT05exlc70MpZ16Ntt4bJoqd28/view?usp=drive_link" target="_blank">View PDF</a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="project-title">Botnet Analysis with Intrusion Detection (Snort) on AWS EC2 using Wireshark</div>
-      <a class="project-link" href="https://drive.google.com/file/d/1M92m2kiCWBcYvkf7ddVfvBpkKJ5ShcxY/view?usp=drive_link" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Botnet Analysis with Intrusion Detection (Snort) on AWS EC2 using Wireshark</div>
+        <a class="project-link" href="https://drive.google.com/file/d/1M92m2kiCWBcYvkf7ddVfvBpkKJ5ShcxY/view?usp=drive_link" target="_blank">View PDF</a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="project-title">Dockerized CI/CD Pipeline with Jenkins, GitHub, and Docker Hub</div>
-      <a class="project-link" href="https://drive.google.com/file/d/10qyEIRJm95SSZmKlV-xqHwEppU50Zck4/view?usp=drivesdk" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Dockerized CI/CD Pipeline with Jenkins, GitHub, and Docker Hub</div>
+        <a class="project-link" href="https://drive.google.com/file/d/10qyEIRJm95SSZmKlV-xqHwEppU50Zck4/view?usp=drivesdk" target="_blank">View PDF</a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="project-title">Infrastructure Automation using Terraform (AWS)</div>
-      <a class="project-link" href="https://drive.google.com/file/d/1oW0mbJXk6JfrAWJJR9AOx82JzXtMOIVF/view?usp=drivesdk" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Infrastructure Automation using Terraform (AWS)</div>
+        <a class="project-link" href="https://drive.google.com/file/d/1oW0mbJXk6JfrAWJJR9AOx82JzXtMOIVF/view?usp=drivesdk" target="_blank">View PDF</a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="project-title">Deployment of a Node.js Application on AWS Using ECR, ECS and Docker</div>
-      <a class="project-link" href="https://drive.google.com/file/d/1HLfqWedKvJ5jKx-f2XASbmbI3W69RtyS/view?usp=drivesdk" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Deployment of a Node.js Application on AWS Using ECR, ECS and Docker</div>
+        <a class="project-link" href="https://drive.google.com/file/d/1HLfqWedKvJ5jKx-f2XASbmbI3W69RtyS/view?usp=drivesdk" target="_blank">View PDF</a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="project-title">Secure Web Application Deployment on AWS EC2 with Nginx, Domain & SSL</div>
-      <a class="project-link" href="https://drive.google.com/file/d/19vRFWYHalf9Cdm_eRNRl-Votob9YiP3e/view?usp=drive_link" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Secure Web Application Deployment on AWS EC2 with Nginx, Domain & SSL</div>
+        <a class="project-link" href="https://drive.google.com/file/d/19vRFWYHalf9Cdm_eRNRl-Votob9YiP3e/view?usp=drive_link" target="_blank">View PDF</a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="project-title">Deploying a Flask Application on Kubernetes Using KIND in AWS EC2</div>
-      <a class="project-link" href="https://drive.google.com/file/d/1wYneEbAh2WLzMZb6SzW_zJFEu2B1lNA2/view?usp=drive_link" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Deploying a Flask Application on Kubernetes Using KIND in AWS EC2</div>
+        <a class="project-link" href="https://drive.google.com/file/d/1wYneEbAh2WLzMZb6SzW_zJFEu2B1lNA2/view?usp=drive_link" target="_blank">View PDF</a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="project-title">Portfolio Deployment through GitHub Pages and AWS (S3, IAM)</div>
-      <a class="project-link" href="https://drive.google.com/file/d/1pVy9MWgNsGbb3mzvHxvMLpfkHDukwWjy/view?usp=drivesdk" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Portfolio Deployment through GitHub Pages and AWS (S3, IAM)</div>
+        <a class="project-link" href="https://drive.google.com/file/d/1pVy9MWgNsGbb3mzvHxvMLpfkHDukwWjy/view?usp=drivesdk" target="_blank">View PDF</a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="project-title">Static Website Hosting on AWS (S3 & CloudFront)</div>
-      <a class="project-link" href="https://drive.google.com/file/d/19ul1drOTj1Pyqdyihp54POjI1uxmf9ZJ/view?usp=drivesdk" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Static Website Hosting on AWS (S3 & CloudFront)</div>
+        <a class="project-link" href="https://drive.google.com/file/d/19ul1drOTj1Pyqdyihp54POjI1uxmf9ZJ/view?usp=drivesdk" target="_blank">View PDF</a>
+      </div>
     </div>
 
     <div class="card">
-      <div class="project-title">Jenkins CI/CD Pipeline & Docker Containerization</div>
-      <a class="project-link" href="https://drive.google.com/file/d/1aovmZ759r8omTGePKvHhPapEep5K3u1M/view?usp=drive_link" target="_blank">View PDF</a>
+      <div class="project-row">
+        <div class="project-title">Jenkins CI/CD Pipeline & Docker Containerization</div>
+        <a class="project-link" href="https://drive.google.com/file/d/1aovmZ759r8omTGePKvHhPapEep5K3u1M/view?usp=drive_link" target="_blank">View PDF</a>
+      </div>
     </div>
-
   </section>
 
   <!-- SKILLS -->
@@ -440,13 +492,41 @@
   <!-- CERTIFICATIONS -->
   <section id="certifications">
     <h2>Certifications</h2>
-    <ul>
-      <li>Getting Started DevOps on AWS — <a href="https://drive.google.com/file/d/1_5WupM5yjbezfqQw3GFmTaZyW3buycG3/view" target="_blank">View</a></li>
-      <li>AWS Cloud Practitioner Essentials — <a href="https://drive.google.com/file/d/1hb6932_mlqsy5ntpE55ziJsIDFcehyw2/view" target="_blank">View</a></li>
-      <li>Basics Observability for Amazon EKS — <a href="https://drive.google.com/file/d/1PcRO_mrZIlK6O33BHwmacIh5FVwQFyCu/view" target="_blank">View</a></li>
-      <li>Linux: Introduction to Shell Scripting for DevOps — <a href="https://drive.google.com/file/d/1yi4YtJ0OqkI1859GtTKVxIL2X9akiozk/view" target="_blank">View</a></li>
-      <li>Introduction to Git & GitHub — <a href="https://drive.google.com/file/d/1srIlF4EEbt0xuG5SWHGgkXyKSi2s72uD/view" target="_blank">View</a></li>
-    </ul>
+
+    <div class="card">
+      <div class="cert-row">
+        <div class="cert-title">Getting Started DevOps on AWS</div>
+        <a href="https://drive.google.com/file/d/1_5WupM5yjbezfqQw3GFmTaZyW3buycG3/view" target="_blank">View</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cert-row">
+        <div class="cert-title">AWS Cloud Practitioner Essentials</div>
+        <a href="https://drive.google.com/file/d/1hb6932_mlqsy5ntpE55ziJsIDFcehyw2/view" target="_blank">View</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cert-row">
+        <div class="cert-title">Basics Observability for Amazon EKS</div>
+        <a href="https://drive.google.com/file/d/1PcRO_mrZIlK6O33BHwmacIh5FVwQFyCu/view" target="_blank">View</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cert-row">
+        <div class="cert-title">Linux: Introduction to Shell Scripting for DevOps</div>
+        <a href="https://drive.google.com/file/d/1yi4YtJ0OqkI1859GtTKVxIL2X9akiozk/view" target="_blank">View</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="cert-row">
+        <div class="cert-title">Introduction to Git & GitHub</div>
+        <a href="https://drive.google.com/file/d/1srIlF4EEbt0xuG5SWHGgkXyKSi2s72uD/view" target="_blank">View</a>
+      </div>
+    </div>
   </section>
 
   <!-- RESUME -->
@@ -460,11 +540,12 @@
   <!-- CONTACT -->
   <section id="contact">
     <h2>Contact Me</h2>
-    <div class="contact">
-      <p>📞 Phone: <a href="tel:+923255723412">+(92) 325 5723412</a></p>
-      <p>📧 Email: <a href="mailto:engralishehzad503@gmail.com">engralishehzad503@gmail.com</a></p>
-      <p>🔗 LinkedIn: <a href="https://www.linkedin.com/in/ali-shehzad-" target="_blank">linkedin.com/in/ali-shehzad-</a></p>
-      <p>💻 GitHub: <a href="https://github.com/alishehzad-943" target="_blank">github.com/alishehzad-943</a></p>
+
+    <div class="contact-grid">
+      <div class="contact-box">Phone: <a href="tel:+923255723412">+(92) 325 5723412</a></div>
+      <div class="contact-box">Email: <a href="mailto:engralishehzad503@gmail.com">engralishehzad503@gmail.com</a></div>
+      <div class="contact-box">LinkedIn: <a href="https://www.linkedin.com/in/ali-shehzad-" target="_blank">linkedin.com/in/ali-shehzad-</a></div>
+      <div class="contact-box">GitHub: <a href="https://github.com/alishehzad-943" target="_blank">github.com/alishehzad-943</a></div>
     </div>
   </section>
 
